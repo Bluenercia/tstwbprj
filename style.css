@@ -1,0 +1,166 @@
+h1 {
+  text-align: center; /* Centrar el texto */
+  font-weight: bold; /* Hacer el texto en negrita */
+  font-size: 25px; /* Ajustar el tamaño del texto */
+  color: gold; /* Color dorado */
+  margin: -5px 0; /* Espaciado alrededor del título */
+}
+
+h2 {
+  text-align: center; /* Centrar el texto */
+  font-weight: bold; /* Hacer el texto en negrita */
+  font-size: 20px; /* Ajustar el tamaño del texto */
+  color: rgb(255, 255, 255); /* Color dorado */
+  margin: 20px 0; /* Espaciado alrededor del título */
+}
+
+hr {
+  position: relative;
+  top: 1px;
+  border: none;
+  height: 2px;
+  background: rgb(250, 191, 28);
+  margin-bottom: 25px;
+}
+
+body {
+  background-color: #222; /* Fondo de la página oscuro */
+  color: white; /* Color de texto general */
+}
+
+.tooltip {
+  color: black; /* Color del texto del tooltip */
+}
+
+.legend rect {
+  cursor: pointer; /* Cambiar el cursor al pasar sobre la leyenda */
+}
+
+/* Estilo para el SVG del gráfico */
+#pca-scatter svg {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para los círculos (puntos) en el gráfico */
+circle {
+  fill: steelblue;
+  stroke: #333;
+  stroke-width: 1px;
+}
+
+/* Estilo para los textos de las etiquetas */
+text {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  fill: #555;
+}
+
+/* Estilo para los ejes */
+.axis line, .axis path {
+  fill: none;
+  stroke: #333;
+  shape-rendering: crispEdges;
+}
+
+/* Estilo para el tooltip */
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 8px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* Estilo para el contenedor de la tabla */
+#data-table {
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* Estilo para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilo para los encabezados de la tabla */
+th {
+    background-color: #4CAF50; /* Color de fondo de los encabezados */
+    color: white; /* Color de texto de los encabezados */
+    padding: 10px; /* Espaciado interno de los encabezados */
+}
+
+/* Estilo para las celdas de la tabla */
+td {
+    padding: 10px; /* Espaciado interno de las celdas */
+    border: 1px solid #ddd; /* Borde de las celdas */
+}
+
+/* Estilo para las filas de la tabla al pasar el mouse */
+tr:hover {
+    background-color: transparent; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo para el contenedor de nodos seleccionados */
+#selected-nodes {
+    padding: 10px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluir padding en el ancho */
+    overflow-y: auto; /* Permitir el desplazamiento vertical si es necesario */
+}
+
+/* Estilo para los nodos seleccionados */
+.node {
+    margin-bottom: 10px; /* Espacio entre nodos */
+}
+
+/* Estilo para el cluster en negrita */
+.node .cluster {
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilo para el texto del comentario de los nodos */
+.node .comment {
+    font-size: 12px; /* Tamaño de fuente más pequeño para los comentarios */
+    color: #333; /* Color del texto del comentario */
+}
+.processed-comment {
+  color: lightgray; 
+  font-style: italic; 
+}
+
+select {
+  background-color: #333; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  border: 2px solid gold; /* Borde dorado */
+  padding: 5px; /* Relleno */
+  font-size: 12px; /* Tamaño de fuente */
+}
+
+table {
+  pointer-events: auto; /* Asegúrate de que la tabla sea interactiva */
+}
+
+td, th {
+  transition: none; /* Elimina cualquier transición */
+}
+
+td:hover, th:hover {
+  background-color: transparent; /* No cambiar el color de fondo al pasar el mouse */
+}
+
+.selection-box {
+  position: absolute;
+  border: 1px dashed #ccc;
+  background-color: rgba(0, 0, 255, 0.1);
+  pointer-events: none; /* Para que no interfiera con otros eventos */
+}
+
+.selected {
+  stroke: blue; /* O cualquier estilo que desees para los nodos seleccionados */
+  stroke-width: 2;
+}

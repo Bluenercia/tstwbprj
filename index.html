@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización Análisis de Sentimientos | Minería de Texto | Transformers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Enlazar el CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.4/d3.min.js"></script> <!-- Cargar D3.js -->
+    <script src="script.js" defer></script> <!-- Cargar el archivo script.js -->
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1 style="color: gold;">Dashboard Text Analysis | Sentiment Analysis Transformers</h1>
+        <hr>
+        <div style="margin: 5px; color: gold; display: flex; justify-content: center; align-items: center;"> <!-- Centrar los elementos -->
+            <div style="display: flex; flex-direction: column; margin-right: 15px;">
+                <label for="dim-reduction">Reducción de Dimensionalidad:</label>
+                <select id="dim-reduction" style="border: 2px solid gold; padding: 5px; font-size: 12px;">
+                    <option value="PCA">PCA</option>
+                    <option value="UMAP">UMAP</option>
+                    <option value="TSNE">TSNE</option>
+                    <option value="Experiment1">Experiment #1</option>
+                </select>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 15px;">
+                <label for="clustering-algorithm">Clustering:</label>
+                <select id="clustering-algorithm" style="border: 2px solid gold; padding: 5px; font-size: 12px;">
+                    <option value="Sentiment">Sentiment</option>
+                    <option value="Kmeans">Kmeans</option>
+                    <option value="DBscan">DBscan</option>
+                    <option value="HDBscan">HDBscan</option>
+                </select>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 15px;">
+                <label for="metric">Métrica:</label>
+                <select id="metric" style="border: 2px solid gold; padding: 5px; font-size: 12px;">
+                    <option value="cosine">Cosine</option>
+                    <option value="euclidean">Euclidean</option>
+                    <option value="manhattan">Manhattan</option>
+                </select>
+            </div>
+            <button id="generate-chart" style="padding: 5px; background-color: gold; border: none; padding: 15px; cursor: pointer;">
+                Generate
+            </button>
+            <label id="info-label" style="color: gold; margin-left: 10px;">[ Nodos seleccionados: 0 ]</label>            
+        </div>
+        <br>
+        <hr>
+    </div>
+    <div style="display: flex; flex-direction: column; width: 90vw; height: 65vh; margin: 0 auto; padding: 0; box-sizing: border-box;">
+        <!-- Leyenda de keywords (10% de altura) -->
+        <div id="keyword-legend-container" style="height: 15%; width: 100%; background-color: #444; color: white; padding-left: 30px; padding-top: 20px;">  
+        </div>
+        
+        <!-- Línea horizontal debajo de la leyenda -->
+        <hr style="border: 1px solid gold; margin: 0;"/>
+        
+    
+        <!-- Contenedor para PCA y Node-info (90% de altura) -->
+        <div style="display: flex; width: 100%; height: 80%;">
+            <!-- Scatterplot (70% de ancho) -->
+            <div id="pca-scatter" style="flex: 0 0 70%; display: flex; justify-content: center; align-items: flex-start; padding: 15px; margin-left: -5px;"></div>
+    
+            <!-- Información del nodo (30% de ancho) -->
+            <div id="node-info" style="flex: 0 0 30%; border-left: 5px solid rgb(250, 191, 28); padding: 10px; font-size: 12px; overflow-y: auto; height: 100%;">
+                <ul id="node-list" style="list-style: none; padding: 0;"></ul>
+            </div>
+        </div>
+    </div>   
+    
+</body>
+</html>
